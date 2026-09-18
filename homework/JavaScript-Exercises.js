@@ -87,8 +87,8 @@ function getNumberFormUser() {
 }
 
 let result1 = getNumberFormUser();
-console.log("Ergebnis von Test 1:", result1, "| Typ:");
-console.log("Ergebnis von Test 2:", result1, "| Typ:");
+console.log("Ergebnis von Test 1:", result1);
+console.log("Ergebnis von Test 2:", result1);
 
 // E6
 function getNumberFormUserExtended() {
@@ -109,8 +109,8 @@ function getNumberFormUserExtended() {
 }
 
 let result2 = getNumberFormUserExtended();
-console.log("Ergebnis von Test 1:", result2, "| Typ:");
-console.log("Ergebnis von Test 2:", result2, "| Typ:");
+console.log("Ergebnis von Test 1:", result2);
+console.log("Ergebnis von Test 2:", result2);
 
 // E7
 function calculator() {
@@ -144,6 +144,8 @@ function calculator() {
         }
     }
 }
+
+let calresult = calculator();
 
 // ===== OBJECTS =====
 const game = {playerName: 'Alice', score: 0, rank: 1, isAlive: true};
