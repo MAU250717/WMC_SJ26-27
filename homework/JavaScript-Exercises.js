@@ -69,6 +69,82 @@ console.log(calculate(5, 3, 'multiply'));
 console.log(calculate(5, 3, 'divide'));
 console.log(calculate(5, 3, 'modulus'));
 
+// E5
+function getNumberFormUser() {
+    let input = prompt("Enter a number: ");
+
+    if (input === null) {
+        return null;
+    }
+
+    let num = Number(input);
+
+    if (isNaN(num) || input.trim() === "") {
+        return null;
+    }
+
+    return num;
+}
+
+let result1 = getNumberFormUser();
+console.log("Ergebnis von Test 1:", result1, "| Typ:");
+console.log("Ergebnis von Test 2:", result1, "| Typ:");
+
+// E6
+function getNumberFormUserExtended() {
+    while(true) {
+        let input = prompt("Enter a number: ");
+
+        if (input === null) {
+            return null;
+        }
+
+        let num = Number(input);
+
+        if (!isNaN(num) && input.trim() !== "") {
+            return  num;
+        }
+        alert("try again");
+    }
+}
+
+let result2 = getNumberFormUserExtended();
+console.log("Ergebnis von Test 1:", result2, "| Typ:");
+console.log("Ergebnis von Test 2:", result2, "| Typ:");
+
+// E7
+function calculator() {
+    while (true) {
+        let operation = prompt("Enter operation (add, subtract, multiply, divide) or 'exit' to quit: ");
+
+        if (operation === null || operation.trim().toLowerCase() === "exit") {
+            console.log("Calculator closed.");
+            break;
+        }
+
+        operation = operation.trim().toLowerCase();
+
+        if (!["add", "subtract", "multiply", "divide"].includes(operation)) {
+            alert("Invalid operation. Try again.");
+            continue;
+        }
+
+        let num1 = getNumberFormUserExtended();
+        if (num1 === null) break;
+
+        let num2 = getNumberFormUserExtended();
+        if (num2 === null) break;
+
+        let result = calculate(num1, num2, operation);
+
+        if (result === null) {
+            console.log("Error: invalid calculation.");
+        } else {
+            console.log(`${num1} ${operation} ${num2} = ${result}`);
+        }
+    }
+}
+
 // ===== OBJECTS =====
 const game = {playerName: 'Alice', score: 0, rank: 1, isAlive: true};
 
