@@ -45,7 +45,7 @@ function add(number1, number2)
 
 // Refactored
 const err = `Das ist keine positive Number`
-function add(number1,number2) {
+function addRefactored(number1,number2) {
     if(typeof number1 !== "number" && number1 <= 0){
         throw new Error(err + number1);
     }
@@ -57,3 +57,4 @@ function add(number1,number2) {
 }
 
 add(1,2);
+addRefactored(1,2);
